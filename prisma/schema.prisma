@@ -6,12 +6,20 @@ generator client {
 }
 
 datasource db {
-    provider = "sqlite"
+    provider = "postgresql"
     url      = env("DATABASE_URL")
 }
 
-model Example {
-    id        String   @id @default(cuid())
+model Character {
+    id        Int @id @default(autoincrement())
     createdAt DateTime @default(now())
     updatedAt DateTime @updatedAt
+    name      String
+    description String
+    episode    Episode
+}
+
+enum Episode {
+  ONE
+  TWO
 }
