@@ -2,6 +2,9 @@
   "name": "earth",
   "version": "0.1.0",
   "private": true,
+  "prettier":{
+    "semi": false
+  },
   "scripts": {
     "build": "next build",
     "dev": "next dev",
