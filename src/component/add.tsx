@@ -1,13 +1,17 @@
+import { Button } from "@mui/material"
 import { api } from "../utils/api"
 
-export function AddCharacter({ refetch }: { refetch: () => Promise<unknown> }) {
+export type AddCharacterProps = {
+  refetch: () => Promise<unknown>
+}
+export function AddCharacter({ refetch }: AddCharacterProps) {
   const add = api.character.create.useMutation({
     onSuccess: async () => {
       await refetch()
     },
   })
   return (
-    <button
+    <Button
       onClick={() => {
         add.mutate({
           name: "test",
@@ -16,7 +20,7 @@ export function AddCharacter({ refetch }: { refetch: () => Promise<unknown> }) {
         })
       }}
     >
-      add character
-    </button>
+      add
+    </Button>
   )
 }
