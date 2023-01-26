@@ -70,7 +70,7 @@ export function Card({
               right: 0,
               visibility: "hidden",
             }}
-            disabled={card.id > 5}
+            disabled={card.id < 5}
           >
             delete
           </Button>
