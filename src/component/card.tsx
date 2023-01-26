@@ -46,6 +46,7 @@ export function Card({
             position: "relative",
             background: alpha(theme.palette.background.paper, 0.8),
             borderRadius: 4,
+            overflowWrap: "break-word",
             "&:hover": {
               "& >button": {
                 visibility: "visible",
@@ -69,6 +70,7 @@ export function Card({
               right: 0,
               visibility: "hidden",
             }}
+            disabled={card.id > 5}
           >
             delete
           </Button>
